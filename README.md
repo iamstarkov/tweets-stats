@@ -46,12 +46,24 @@ client.get('/statuses/user_timeline.json', { screen_name: 'POTUS' }, (err, tweet
 
 ### stats(input)
 
-Return `Object` with these fields:
+Return `Object` with fields:
 
-* `tweets, own, replies, retweets` — number of all tweets and per each categorie
-* `ownPercentage, repliesPercentage, retweetsPercentage` — prev numbers in proportion to all tweets
-* `retweeted, favorited` — retweet/favorited sum of input tweets
-* `retweetedKpi, favoritedKpi` — prev sums divided by number of all tweets
+* `tweets` number of all tweets in input
+* `own` object representing author’s own tweets, with fields:
+  * `total` number of own tweets
+  * `percent` the percentage of own tweets from the total number of all tweets
+* `replies` object representing author’s replies to others, with fields:
+  * `total` number of replies
+  * `percent` the percentage of replies from the total number of all tweets
+* `retweets` object representing author’s retweets of other’s tweets, with fields:
+  * `total` number of retweets
+  * `percent` the percentage of retweets from the total number of all tweets
+* `retweeted` object representing author’s tweets retweeted by others, with fields:
+  * `total` how much own tweets have been retweeted in total
+  * `average` how much own tweets have been retweeted in average per one tweet
+* `favorited` object representing author’s tweets favorited by others, with fields:
+  * `total` how much own tweets have been favorited in total
+  * `average` how much own tweets have been favorited in average per one tweet
 
 #### input
 
