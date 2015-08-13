@@ -1,7 +1,7 @@
 {
   "name": "tweets-stats",
   "version": "0.0.0",
-  "description": "get statstics from array of tweets",
+  "description": "get statistics from array of tweets",
   "main": "index.es5.js",
   "scripts": {
     "coverage": "isparta cover _mocha index.js -- --require babel/register",
@@ -24,7 +24,7 @@
     "tweets",
     "stats",
     "data",
-    "statstics"
+    "statistics"
   ],
   "author": "Vladimir Starkov <iamstarkov@gmail.com> (https://iamstarkov.com)",
   "license": "MIT",
