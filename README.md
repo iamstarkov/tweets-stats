@@ -5,7 +5,7 @@
 [![Coveralls Status][coveralls-image]][coveralls-url]
 [![Dependency Status][depstat-image]][depstat-url]
 
-> get statstics from array of tweets
+> get statistics from array of tweets
 
 ## Install
 
