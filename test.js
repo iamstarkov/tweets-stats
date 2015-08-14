@@ -1,6 +1,7 @@
-import { equal } from 'assert';
+import { equal, deepEqual } from 'assert';
 import stats from './index';
 import { own, replies, retweets } from './fixtures.json';
+import { tweets as reality } from './fixtures-reality.json';
 
 const tweets = [...own, ...replies, ...retweets];
 const percent = tweets.length / 100;
@@ -37,6 +38,21 @@ it('should stats favorited', () =>
 
 it('should stats favoritedKpi', () =>
   equal(stats(tweets).favoritedKpi, 2.5));
+
+it('should stats reality check', () =>
+  deepEqual(stats(reality), {
+    "tweets": 192,
+    "own": 90,
+    "replies": 66,
+    "retweets": 36,
+    "ownPercentage": 46.88,
+    "repliesPercentage": 34.38,
+    "retweetsPercentage": 18.75,
+    "retweeted": 73,
+    "favorited": 471,
+    "retweetedKpi": 0.81,
+    "favoritedKpi": 5.23
+  }));
 
 it('should stats invalid input', () =>
   equal(stats('unicorns'), undefined));

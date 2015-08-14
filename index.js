@@ -23,9 +23,9 @@ export default function tweetsStats(input) {
   const replies = _tweets.filter(isReply).length;
   const retweets = _tweets.filter(isRetweet).length;
 
-  const ownPercentage = (own / percent) || 0;
-  const repliesPercentage = (replies / percent) || 0;
-  const retweetsPercentage = (retweets / percent) || 0;
+  const ownPercentage =      Number((own / percent) || 0).toFixed(2);
+  const repliesPercentage =  Number((replies / percent) || 0).toFixed(2);
+  const retweetsPercentage = Number((retweets / percent) || 0).toFixed(2);
 
   const retweeted = _ownTweets.reduce(sumRetweeted, 0);
   const favorited = _ownTweets.reduce(sumFavorited, 0);
