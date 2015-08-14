@@ -2,8 +2,8 @@ import { is } from 'ramda';
 
 const isOwn = tweet => !isReply(tweet) && !isRetweet(tweet);
 const isRetweet = tweet => !!tweet.retweeted_status;
-const isReplyToSelf = tweet => tweet.in_reply_to_screen_name === 'jsunderhood';
-const isReply = tweet => !!tweet.in_reply_to_screen_name && !isReplyToSelf(tweet);
+const isSelfReply = tweet => tweet.user.id_str === tweet.in_reply_to_user_id_str;
+const isReply = tweet => !!tweet.in_reply_to_screen_name && !isSelfReply(tweet);
 const sumRetweeted = (state, tweet) => state + tweet.retweet_count;
 const sumFavorited = (state, tweet) => state + tweet.favorite_count;
 
