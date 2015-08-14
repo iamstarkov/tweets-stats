@@ -16,7 +16,7 @@
 ```js
 import tweetsStats from 'tweets-stats';
 
-stats([/*tweets*/]);
+stats([/*…*/]);
 /* {
   "tweets": 192,
   "own": 90,
