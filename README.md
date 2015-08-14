@@ -16,7 +16,7 @@
 ```js
 import tweetsStats from 'tweets-stats';
 
-stats([/*…*/]);
+stats([/*tweets*/]);
 /* {
   "tweets": 192,
   "own": 90,
@@ -34,16 +34,16 @@ stats([/*…*/]);
 
 ## API
 
-### tweetsStats(tweets)
+### tweetsStats(input)
 
-Return `Object {
-  tweets, own, replies, retweets,
-  ownPercentage, repliesPercentage, retweetsPercentage,
-  retweeted, favorited,
-  retweetedKpi, favoritedKpi
-}`
+Return `Object` with these fields:
 
-#### tweets
+* `tweets, own, replies, retweets` — number of all tweets and per each categorie
+* `ownPercentage, repliesPercentage, retweetsPercentage` — prev numbers in proportion to all tweets
+* `retweeted, favorited` — retweet/favorited sum of input tweets
+* `retweetedKpi, favoritedKpi` — prev sums divided by number of all tweets
+
+#### input
 
 *Required*  
 Type: `Array`
