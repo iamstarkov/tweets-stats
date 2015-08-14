@@ -16,28 +16,41 @@
 ```js
 import tweetsStats from 'tweets-stats';
 
-tweetsStats('unicorns'); // unicorns
+stats([/*…*/]);
+/* {
+  "tweets": 192,
+  "own": 90,
+  "replies": 66,
+  "retweets": 36,
+  "ownPercentage": 46.88,
+  "repliesPercentage": 34.38,
+  "retweetsPercentage": 18.75,
+  "retweeted": 73,
+  "favorited": 471,
+  "retweetedKpi": 0.81,
+  "favoritedKpi": 5.23
+} */
 ```
 
 ## API
 
-### tweetsStats(input, [options])
+### tweetsStats(tweets)
 
-#### input
+Return `Object {
+  tweets, own, replies, retweets,
+  ownPercentage, repliesPercentage, retweetsPercentage,
+  retweeted, favorited,
+  retweetedKpi, favoritedKpi
+}`
+
+#### tweets
 
 *Required*  
-Type: `String`
+Type: `Array`
 
-Lorem ipsum.
+Array of tweets from Twitter API. Take a look at [get-tweets][get-tweets].
 
-#### options
-
-##### foo
-
-Type: `Boolean`  
-Default: `false`
-
-Lorem ipsum.
+[get-tweets]: https://github.com/iamstarkov/get-tweets
 
 ## License
 
