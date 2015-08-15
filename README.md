@@ -58,8 +58,12 @@ Return `Object` with these fields:
 *Required*  
 Type: `Array`
 
-Array of tweets from Twitter API. Take a look at [get-tweets][get-tweets].
+Array of tweets from [Twitter rest API][rest], basically from [user_timeline][timeline] endpoint. To make you life easier take a look at [node-twitter][node-twitter], [twit][twit] or [get-tweets][get-tweets] modules.
 
+[rest]: https://dev.twitter.com/rest/public
+[timeline]: https://dev.twitter.com/rest/reference/get/statuses/user_timeline
+[node-twitter]: https://github.com/desmondmorris/node-twitter/
+[twit]: https://github.com/ttezel/twit
 [get-tweets]: https://github.com/iamstarkov/get-tweets
 
 ## License
