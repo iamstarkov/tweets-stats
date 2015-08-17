@@ -1,6 +1,6 @@
 {
   "name": "tweets-stats",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "get statistics from array of tweets",
   "main": "index.es5.js",
   "scripts": {
