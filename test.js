@@ -67,3 +67,11 @@ it('should stats epmty array outcome valid props', () => {
   equal(stats([]).retweetedKpi, 0);
   equal(stats([]).favoritedKpi, 0);
 });
+
+it.skip('readme case', (done) => {
+  const client = new Twitter(tokens);
+  client.get('/statuses/user_timeline.json', { screen_name: 'POTUS' }, (err, tweets, raw) => {
+    if (err) throw err;
+    equal(stats(tweets), {});
+  });
+});
