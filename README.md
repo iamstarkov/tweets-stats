@@ -24,20 +24,15 @@ client.get('/statuses/user_timeline.json', { screen_name: 'POTUS' }, (err, tweet
   stats(tweets); /* {
     "tweets": 20,
     "own": {
-      "total": 19
-      "percent": 95.00 },
+      "total": 19, "percent": 95.00 },
     "replies": {
-      "total": 0
-      "percent": 0.00 },
+      "total": 0,  "percent": 0.00 },
     "retweets": {
-      "total": 1
-      "percent": 5.00 },
+      "total": 1,  "percent": 5.00 },
     "retweeted" {
-      "total": 158764,
-      "average": 8356 },
+      "total": 158764, "average": 8356 },
     "favorited": {
-      "total": 85888,
-      "average": 4520.42 }}
+      "total": 85888,  "average": 4520.42 }}
   */
 });
 ```
