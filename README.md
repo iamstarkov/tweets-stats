@@ -14,27 +14,37 @@
 ## Usage
 
 ```js
-import tweetsStats from 'tweets-stats';
+import Twitter from 'twitter';
+import tokens from 'twitter-tokens';
+import stats from 'tweets-stats';
 
-stats([/*…*/]);
-/* {
-  "tweets": 192,
-  "own": 90,
-  "replies": 66,
-  "retweets": 36,
-  "ownPercentage": 46.88,
-  "repliesPercentage": 34.38,
-  "retweetsPercentage": 18.75,
-  "retweeted": 73,
-  "favorited": 471,
-  "retweetedKpi": 0.81,
-  "favoritedKpi": 5.23
-} */
+const client = new Twitter(tokens);
+client.get('/statuses/user_timeline.json', { screen_name: 'POTUS' }, (err, tweets, raw) => {
+  if (err) throw err;
+  stats(tweets); /* {
+    "tweets": 20,
+    "own": {
+      "total": 19
+      "percent": 95.00 },
+    "replies": {
+      "total": 0
+      "percent": 0.00 },
+    "retweets": {
+      "total": 1
+      "percent": 5.00 },
+    "retweeted" {
+      "total": 158764,
+      "kpi": 8356 },
+    "favorited": {
+      "total": 85888,
+      "kpi": 4520.42 }}
+  */
+});
 ```
 
 ## API
 
-### tweetsStats(input)
+### stats(input)
 
 Return `Object` with these fields:
 
