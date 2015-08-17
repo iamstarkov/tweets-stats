@@ -34,10 +34,10 @@ client.get('/statuses/user_timeline.json', { screen_name: 'POTUS' }, (err, tweet
       "percent": 5.00 },
     "retweeted" {
       "total": 158764,
-      "kpi": 8356 },
+      "average": 8356 },
     "favorited": {
       "total": 85888,
-      "kpi": 4520.42 }}
+      "average": 4520.42 }}
   */
 });
 ```
