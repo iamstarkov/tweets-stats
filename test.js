@@ -10,48 +10,48 @@ it('should stats tweets', () =>
   equal(stats(tweets).tweets, tweets.length));
 
 it('should stats own', () =>
-  equal(stats(tweets).own, own.length));
+  deepEqual(stats(tweets).own, {
+    total: own.length,
+    percent: (own.length / percent)
+  }));
 
 it('should stats replies', () =>
-  equal(stats(tweets).replies, replies.length));
+  deepEqual(stats(tweets).replies, {
+    total: replies.length,
+    percent: (replies.length / percent)
+  }));
 
 it('should stats retweets', () =>
-  equal(stats(tweets).retweets, retweets.length));
-
-it('should stats ownPercentage', () =>
-  equal(stats(tweets).ownPercentage, replies.length / percent));
-
-it('should stats repliesPercentage', () =>
-  equal(stats(tweets).repliesPercentage, replies.length / percent));
-
-it('should stats retweetsPercentage', () =>
-  equal(stats(tweets).retweetsPercentage, retweets.length / percent));
+  deepEqual(stats(tweets).retweets, {
+    total: retweets.length,
+    percent: (retweets.length / percent)
+  }));
 
 it('should stats retweeted', () =>
-  equal(stats(tweets).retweeted, 121));
-
-it('should stats retweetedKpi', () =>
-  equal(stats(tweets).retweetedKpi, 60.5));
+  deepEqual(stats(tweets).retweeted, {
+    total: 121,
+    average: 60.5
+  }));
 
 it('should stats favorited', () =>
-  equal(stats(tweets).favorited, 5));
-
-it('should stats favoritedKpi', () =>
-  equal(stats(tweets).favoritedKpi, 2.5));
+  deepEqual(stats(tweets).favorited, {
+    total: 5,
+    average: 2.5
+  }));
 
 it('should stats reality check', () =>
   deepEqual(stats(reality), {
     "tweets": 192,
-    "own": 90,
-    "replies": 66,
-    "retweets": 36,
-    "ownPercentage": 46.88,
-    "repliesPercentage": 34.38,
-    "retweetsPercentage": 18.75,
-    "retweeted": 73,
-    "favorited": 471,
-    "retweetedKpi": 0.81,
-    "favoritedKpi": 5.23
+    "own": {
+      "total": 90,  "percent": 46.88 },
+    "replies": {
+      "total": 66,  "percent": 34.38 },
+    "retweets": {
+      "total": 36,  "percent": 18.75 },
+    "retweeted": {
+      "total": 73,  "average": 0.81 },
+    "favorited": {
+      "total": 471, "average": 5.23 }
   }));
 
 it('should stats invalid input', () =>
@@ -61,11 +61,11 @@ it('should stats invalid empty input', () =>
   equal(stats(), undefined));
 
 it('should stats epmty array outcome valid props', () => {
-  equal(stats([]).ownPercentage, 0);
-  equal(stats([]).repliesPercentage, 0);
-  equal(stats([]).retweetsPercentage, 0);
-  equal(stats([]).retweetedKpi, 0);
-  equal(stats([]).favoritedKpi, 0);
+  equal(stats([]).own.percent, 0);
+  equal(stats([]).replies.percent, 0);
+  equal(stats([]).retweets.percent, 0);
+  equal(stats([]).retweeted.average, 0);
+  equal(stats([]).favorited.average, 0);
 });
 
 it.skip('readme case', (done) => {
