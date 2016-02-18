@@ -45,6 +45,6 @@
     "trash": "*"
   },
   "dependencies": {
-    "ramda": "^0.17.1"
+    "ramda": "^0.19.1"
   }
 }
