@@ -4,10 +4,10 @@
   "description": "get statistics from array of tweets",
   "main": "index.es5.js",
   "scripts": {
-    "coverage": "isparta cover _mocha index.js -- --require babel/register",
+    "coverage": "babel-node ./node_modules/.bin/isparta cover _mocha index.js -- --compilers js:babel-register",
     "precoveralls": "npm run coverage",
     "coveralls": "coveralls < coverage/lcov.info",
-    "test": "mocha --require babel/register",
+    "test": "mocha --require babel-register",
     "tdd": "npm test -- --watch",
     "transpile": "babel index.js --out-file index.es5.js",
     "prepublish": "npm run transpile",
@@ -34,7 +34,10 @@
   "homepage": "https://github.com/iamstarkov/tweets-stats#readme",
   "devDependencies": {
     "assert": "*",
-    "babel": "*",
+    "babel-cli": "^6.5.1",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.5.2",
     "coveralls": "*",
     "isparta": "*",
     "mocha": "*",
@@ -42,6 +45,6 @@
     "trash": "*"
   },
   "dependencies": {
-    "ramda": "^0.17.1"
+    "ramda": "^0.19.1"
   }
 }

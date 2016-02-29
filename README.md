@@ -73,6 +73,16 @@ Array of tweets from [Twitter rest API][rest], basically from [user_timeline][ti
 [twit]: https://github.com/ttezel/twit
 [get-tweets]: https://github.com/iamstarkov/get-tweets
 
+## Related
+
+* [get-tweets][get-tweets] — get latest tweets
+* [get-twitter-info][get-twitter-info] — get info about target username
+* [get-twitter-followers][get-twitter-followers] — get followers for target username
+* [tweet-links][tweet-links] — extract links from tweet
+* [twitter-mentions][twitter-mentions] — get latest mentions for target username
+* [twitter-profile-media][twitter-profile-media] — get twitter profile image and banner
+* [twitter-tokens][twitter-tokens] — get twitter tokens
+
 ## License
 
 MIT © [Vladimir Starkov](https://iamstarkov.com)
@@ -88,3 +98,11 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 
 [depstat-url]: https://david-dm.org/iamstarkov/tweets-stats
 [depstat-image]: https://david-dm.org/iamstarkov/tweets-stats.svg?style=flat-square
+
+[get-tweets]: https://github.com/iamstarkov/get-tweets
+[get-twitter-info]: https://github.com/iamstarkov/get-twitter-info
+[get-twitter-followers]: https://github.com/iamstarkov/get-twitter-followers
+[tweet-links]: https://github.com/iamstarkov/tweet-links
+[twitter-mentions]: https://github.com/iamstarkov/twitter-mentions
+[twitter-profile-media]: https://github.com/andrepolischuk/twitter-profile-media
+[twitter-tokens]: https://github.com/iamstarkov/twitter-tokens
